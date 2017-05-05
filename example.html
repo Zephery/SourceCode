@@ -1,0 +1,1722 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>计算机：一部历史</title>
+<link href="/cns/templates/css/style.css" rel="stylesheet" type="text/css" />
+<script src="/module/goods/manager/templates/facefiles/jquery-1.2.2.pack.js" type="text/javascript"></script>
+<link href="/module/goods/manager/templates/facefiles/facebox.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="/module/goods/manager/templates/facefiles/facebox.js" type="text/javascript"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $('a[rel*=facebox]').facebox()
+    })
+</script>
+<style type="text/css">
+<!--
+p{ text-indent:24px; margin:0; padding:0;}
+
+#Layer2 {
+	position:absolute;
+	left:420px;
+	top:540px;
+	width:315px;
+	height:40px;
+	z-index:1;
+}
+-->
+
+</style>
+<script type="text/javascript">
+function showmuludiv(){
+	var mulu_div = document.getElementById("muludiv");
+	var mulu_span1 = document.getElementById("muluspan1");
+	var mulu_span2 = document.getElementById("muluspan2");
+	mulu_div.style.display="";
+	mulu_span1.style.display="none";
+	mulu_span2.style.display="";
+
+}
+function hidmuludiv(){
+	var mulu_div = document.getElementById("muludiv");
+	var mulu_span1 = document.getElementById("muluspan1");
+	var mulu_span2 = document.getElementById("muluspan2");
+	mulu_div.style.display="none";
+	mulu_span1.style.display="";
+	mulu_span2.style.display="none";
+}
+//前言
+function showqianyandiv(){
+	var qianyan_div = document.getElementById("qianyandiv");
+	var qianyandivll = document.getElementById("qianyandivll");
+	var qianyan_span1 = document.getElementById("qianyanspan1");
+	var qianyan_span2 = document.getElementById("qianyanspan2");
+	qianyan_div.style.display="block";
+	qianyandivll.style.display="none";
+	qianyan_span1.style.display="none";
+	qianyan_span2.style.display="block";
+
+}
+function hidqianyandiv(){
+	var qianyan_div = document.getElementById("qianyandiv");
+	var qianyandivll = document.getElementById("qianyandivll");
+	var qianyan_span1 = document.getElementById("qianyanspan1");
+	var qianyan_span2 = document.getElementById("qianyanspan2");
+	qianyan_div.style.display="none";
+	qianyandivll.style.display="block";
+	qianyan_span1.style.display="block";
+	qianyan_span2.style.display="none";
+}
+
+</script>
+
+<script type="text/javascript" src="/module/goods/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="/module/goods/js/jquerycookie.js"></script>
+<script language="javascript">
+function addcookie(name,value){
+	$.cookie(name,value);
+}
+
+function redcookie(name){
+	alert($.cookie(name));
+}
+
+function delcookie(name){
+	$.cookie(name,null)
+}
+
+function getXmlHttpObject(){
+		var xmlHttp = null;
+		try{
+			//Firefox,Opera8.0+,Safari
+			xmlHttp = new XMLHttpRequest();
+		}catch(e){
+			//Internet Explorer
+			try{
+				xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+			}catch(e){
+				xmlHttp = new ActiveXobject("Microsoft.XMLHTTP");
+			}
+		}
+		return xmlHttp;
+}
+
+function getAjaxRequestText(url,o){
+	var temp = "";
+	xmlHttp = getXmlHttpObject();
+	if(xmlHttp==null){
+		alert('浏览器不支持ajax');
+	}
+	xmlHttp.onreadystatechange=stateChanged;
+	xmlHttp.open("GET",url,true);
+	xmlHttp.send(null);
+	function stateChanged(){
+		if (xmlHttp.readyState==4){
+if(o=="cookielist"){
+        temp =  xmlHttp.responseText;
+		var tempdiv = document.getElementById(o);
+		tempdiv.innerHTML = temp;
+}else if(o=="tuijianbyseelist"){
+ var t1 = "";
+ var temp1 =  xmlHttp.responseText;
+ var temparr1 = temp1.split(",;");
+ if(temp1!=""){
+	 if(temparr1.length>=5){
+ var goodidarr = temparr1[0].split(",");
+ var goodnamearr = temparr1[1].split(",");
+ var goodcoverimagearr = temparr1[2].split(",");
+ var goodpricearr = temparr1[3].split(",");
+ var huiyaunpricearr = temparr1[4].split(",");
+ for(var i=0;i<goodidarr.length;i++){
+		t1 += "<div style='width:200px; display:inline; float:left; border-bottom: dotted 1px #878787;margin-top:13px;padding-bottom:13px;margin-left:14px;'>";
+		t1 += "	 <table width='100%' border='0' cellspacing='0' cellpadding='0'>";
+		t1 += "           <tr>";
+		t1 += "           <td width='72' align='left' valign='top'><table width='61' height='82' border='0' cellpadding='0' cellspacing='0'>";
+		t1 += "               <tr>";
+		t1 += "                 <td align='center' class='bod_all_grey'><a href='/module/goods/wssd_content.jsp?bookid="+goodidarr[i]+"'><img src='"+goodcoverimagearr[i]+"' width='51' height='72' /></a></td>";
+		t1 += "               </tr>";
+		t1 += "             </table></td>";
+		t1 += "           <td align='left' valign='top'><table width='100%' border='0' cellspacing='0' cellpadding='0'>";
+		t1 += "              <tr>";
+		t1 += "                 <td align='left' class='line_h21 linkf12_blue'><a href='/module/goods/wssd_content.jsp?bookid="+goodidarr[i]+"'>"+goodnamearr[i]+" </a></td>";
+		t1 += "                </tr>";
+		t1 += "               <tr>";
+		t1 += "                 <td align='left' class='f12_grey line_h21'>定&nbsp;&nbsp;价：￥"+goodpricearr[i]+"</td>";
+		t1 += "                 </tr>";
+		t1 += "                <tr>";
+		t1 += "                      <td align='left' class='line_h21 f12_red'>会员价：￥"+huiyaunpricearr[i]+"</td>";
+		t1 += "                 </tr>";
+		t1 += "               </table></td>";
+		t1 += "               </tr>";
+		t1 += "             </table>";
+		t1 += "		 </div>";
+		 }
+		 }
+			  var tempdiv = document.getElementById(o);
+			  tempdiv.innerHTML = t1;
+ }
+}else if(o=="xgtslist"){
+ var t2 = "";
+ var temp2 =  xmlHttp.responseText;
+ if(temp2!=""){
+ //alert(temp2);
+ var temparr2 = temp2.split(",;");
+ var goodidarr = temparr2[0].split(",");
+
+  //alert(temparr2[1]);
+ var goodnamearr = temparr2[1].split(",");
+
+ var goodpricearr = temparr2[3].split("&quot;");//作者
+ //var goodpricearr = temparr2[3].split(",");//作者
+ var huiyuanpricearr = temparr2[4].split(",");//出版时间
+ var goodcoverimagearr = temparr2[2].split(",");
+
+
+
+ t2 += "<table width='200' border='0' cellspacing='0' cellpadding='0'>";
+	t2 += "<tr>";
+		t2 += "<td class='bod_grey_bot pad_bot10 pad_t15'><table width='100%' border='0' cellspacing='0' cellpadding='0'>";
+		t2 += " <tr>";
+			t2 += "   <td width='21' align='left' valign='top'><img src='images/tjts_line1.jpg' width='7' height='7' /></td>";
+			t2 += "   <td width='70' align='left' valign='top'><table width='61' height='82' border='0' cellpadding='0' cellspacing='0'>";
+			t2 += "      <tr>";
+				t2 += "       <td align='center' class='bod_all_grey'><a href='/module/goods/wssd_content.jsp?bookid="+goodidarr[0]+"'><img src='"+goodcoverimagearr[0]+"' width='51' height='72' /></a></td>";
+				t2 += "       </tr>";
+					t2 += "      </table></td>";
+						t2 += "      <td align='left' valign='top'><table width='100%' border='0' cellspacing='0' cellpadding='0'>";
+						t2 += "        <tr>";
+							t2 += "         <td align='left' class='line_h21 linkf12_blue'><a href='/module/goods/wssd_content.jsp?bookid="+goodidarr[0]+"'>"+goodnamearr[0]+" </a></td>";
+							t2 += "         </tr>";
+								t2 += "         <tr>";
+									t2 += "           <td align='left' class='f12_grey1 line_h21'>作译者："+goodpricearr[0]+"</td>";
+									t2 += "        </tr>";
+										t2 += "       <tr>";
+											t2 += "        <td align='left' class='line_h21 f12_grey1'>出版日期："+huiyuanpricearr[0]+"</td>";
+											t2 += "        </tr>";
+												t2 += "      </table></td>";
+													t2 += "     </tr>";
+														t2 += "   </table></td>";
+															t2 += "  </tr><tr><td>";
+ for(var i=1;i<goodidarr.length;i++){
+
+        t2 += "<table width='100%' border='0' cellspacing='0' cellpadding='0'>";
+        t2 += "<tr>";
+        t2 += "<td width='21' align='left'><img src='images/tjts_line1.jpg' width='7' height='7' /></td>";
+        t2 += "<td align='left' class='line_h30 f12_black'><a href='/module/goods/wssd_content.jsp?bookid="+goodidarr[i]+"'>"+goodnamearr[i]+"</a></td>";
+        t2 += "</tr>";
+        t2 += "</table>";
+
+		 }
+ t2 += "</td></tr>";
+	t2 += "	  <tr>";
+		t2 += "<td height='30' align='right'><a href='/module/goods/searchkey.jsp?tuijian=7'><img src='images/more_04.jpg' width='41' height='11' border='0' /></a></td>";
+		t2 += "</tr>";
+			t2 += " </table>";
+		 }
+			  var tempdiv2 = document.getElementById(o);
+			  tempdiv2.innerHTML = t2;
+
+}else if(o=="seeoneseemorelist"){
+	 var t3 = "<table width='200' border='0' cellspacing='0' cellpadding='0'>";
+	 var temp3 =  xmlHttp.responseText;
+	 var temparr3 = temp3.split(",;");
+	 if(temparr3.length>1&&temp3!=""){
+		 var goodidarr = temparr3[0].split(",");
+		 var goodnamearr = temparr3[1].split(",");
+		 for(var i=0;i<goodidarr.length;i++){
+				t3 += "<tr><td align='left' class='zjyl_line1 f12_black line1_h30 bod_grey_bot'><a href='/module/goods/wssd_content.jsp?bookid="+goodidarr[i]+"'>"+goodnamearr[i]+"</a></td></tr>";
+		}
+	}
+t3 += "</table>";
+			  var tempdiv = document.getElementById(o);
+			  tempdiv.innerHTML = t3;
+}else if(o=="haimailelist"){
+
+	var t4 = "<table width='200' border='0' cellspacing='0' cellpadding='0'>";
+ var temp4 =  xmlHttp.responseText;
+ var temparr4 = temp4.split(",;");
+ if(temp4!=""){
+ var goodidarr = temparr4[0].split(",");
+ var goodnamearr = temparr4[1].split(",");
+ for(var i=0;i<goodidarr.length;i++){
+		t4 += "<tr><td align='left' class='zjyl_line1 f12_black line1_h30 bod_grey_bot'><a href='/module/goods/wssd_content.jsp?bookid="+goodidarr[i]+"'>"+goodnamearr[i]+"</a></td></tr>";
+		 }
+		 }
+		 t4 += "</table>";
+			  var tempdiv = document.getElementById(o);
+			  tempdiv.innerHTML = t4;
+}
+		}
+	}
+}
+function gettuijianbysee(num,str){
+	var url = "/module/goods/tuijianbysee.jsp?shownum="+num+"&liststr="+str+"";
+	getAjaxRequestText(url,str);
+}
+function gettuijianbysee2(num,str){
+	var url = "/module/goods/tuijianbysee2.jsp?shownum="+num+"&liststr="+str+"";
+	getAjaxRequestText(url,str);
+}
+ function seegoodcookie(num,str,bid){
+		                	var url = "/module/goods/goodcookie.jsp?shownum="+num+"&liststr="+str+"&bookid="+bid;
+		                	getAjaxRequestText(url,str);
+		                }
+
+
+function seexgts(num,str,bid){
+	var url = "/module/goods/xgts_include.jsp?shownum="+num+"&liststr="+str+"&bookid="+bid;
+	getAjaxRequestText(url,str);
+}
+function seeoneseemore(num,str,bid){
+	var url = "/module/goods/llgbsdgkhkg_include.jsp?shownum="+num+"&liststr="+str+"&bookid="+bid;
+	getAjaxRequestText(url,str);
+}
+
+function seehaimaile(num,str,bid){
+	var url = "/module/goods/haimaile_include.jsp?shownum="+num+"&liststr="+str+"&bookid="+bid;
+	getAjaxRequestText(url,str);
+}
+
+
+
+</script>
+</head>
+
+<body>
+<script>
+//redcookie('phei');
+//addcookie('phei','42345');
+</script>
+<!-- div-->
+<div id="Layer2" style="display:none;" onmouseout="showOutDiv()" onmousemove="showmoveDiv()" class="zjxz_ys" >
+ <ul>
+  <li><a href="#">第一章</a></li>
+  <li><a href="#">第二章</a></li>
+  <li><a href="#">第三章</a></li>
+ </ul>
+
+</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="body_top_bg"><table width="982" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="bg_whlie">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <!--top-->
+              <tr>
+<td align="center">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="290" align="center" valign="top" class="pad_t17"><img src="/templates/images/logo.jpg" width="261" height="51" /></td>
+        <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="237" align="right" class="pad_r20 pad_t20"><script>
+function tick() {
+var hours, minutes, seconds, xfile;
+var intHours, intMinutes, intSeconds;
+var today, theday;
+today = new Date();
+function initArray(){
+this.length=initArray.arguments.length
+for(var i=0;i<this.length;i++)
+this[i+1]=initArray.arguments[i] }
+var d=new initArray(
+"星期日",
+"星期一",
+"星期二",
+"星期三",
+"星期四",
+"星期五",
+"星期六");
+//theday = today.getYear()+"年" + [today.getMonth()+1]+"月" +today.getDate() + d[today.getDay()+1];
+theday = today.getFullYear()+"年" + [today.getMonth()+1]+"月" +today.getDate() + d[today.getDay()+1];
+intHours = today.getHours();
+intMinutes = today.getMinutes();
+intSeconds = today.getSeconds();
+
+if (intHours == 0) {
+hours = "12:";
+xfile = "午夜";
+} else if (intHours < 12) {
+hours = intHours+":";
+xfile = "上午";
+} else if (intHours == 12) {
+hours = "12:";
+xfile = "正午";
+} else {
+intHours = intHours - 12;
+hours = intHours + ":";
+xfile = "下午";
+}
+if (intMinutes < 10) {
+minutes = "0"+intMinutes+":";
+} else {
+minutes = intMinutes+":";
+}
+if (intSeconds < 10) {
+seconds = "0"+intSeconds+" ";
+} else {
+seconds = intSeconds+" ";
+}
+timeString = theday+" "+xfile+" "+hours+minutes+seconds;
+document.getElementById("Clock").innerHTML = timeString;
+window.setTimeout("tick();", 100);
+}
+window.onload = tick;
+
+function getXmlHttpObject(){
+	var xmlHttp = null;
+	try{
+		//Firefox,Opera8.0+,Safari
+		xmlHttp = new XMLHttpRequest();
+	}catch(e){
+		//Internet Explorer
+		try{
+			xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+		}catch(e){
+			xmlHttp = new ActiveXobject("Microsoft.XMLHTTP");
+		}
+	}
+	return xmlHttp;
+}
+
+function getloginoutText(url,o){
+	var temp = "";
+	xmlHttp = getXmlHttpObject();
+	if(xmlHttp==null){
+		alert('浏览器不支持ajax');
+	}
+	xmlHttp.onreadystatechange=stateChanged;
+	xmlHttp.open("GET",url,true);
+	xmlHttp.send(null);
+		function stateChanged(){
+			if (xmlHttp.readyState==4){
+			    temp =  xmlHttp.responseText;
+				var tempdiv = document.getElementById(o);
+				tempdiv.innerHTML = temp;
+			}
+		}
+}
+function seeloginout(str){
+	var url = "/module/membercenter/topajaxloginout.jsp?time="+new Date().getTime();;
+	getloginoutText(url,str);
+}
+</script>
+                <span id="Clock"></span></td>
+              <td width="467" class="pad_t20"><table width="100%" height="17" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td align="left" class="linef12b_blue hxjy_line bod_r_left"><ul>
+                        <li><a target="_bank" href="http://www.hxedu.com.cn">华信教育资源网</a></li>
+                        <li><a target="_bank" href="http://www.hxpress.com.cn">华信数字出版网</a></li>
+                        <li><a target="_bank" href="http://www.chinacomic.com.cn">中国动漫网</a></li>
+                      </ul></td>
+                    <td width="90" align="left" class="eng_lie linef12b_blue"><a target="_blank" href="/ens/index.shtml">ENGLISH</a></td>
+                  </tr>
+                </table></td>
+            </tr>
+          </table></td>
+          </tr>
+          <tr>
+            <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td align="right">
+              <div class="div_buy_line">
+              <div id="Layer3" style="display:none;" onmouseout="showOutDivgwc()" onmousemove="showmoveDivgwc()"  class="zjxz_ys2 f12_grey" >
+</div>
+<div id="Layer4" style="display:none;" onmouseout="showOutDivzxjl()" onmousemove="showmoveDivzxjl()"  class="zjxz_ys2 f12_grey">
+
+<a href='tencent://message/?uin=2473231267&Menu=yes'>购书咨询</a><br/><hr/>
+
+<a href='tencent://message/?uin=1245913815&Menu=yes'>教学课件</a><br/><hr/>
+
+<a href='tencent://message/?uin=195132426&Menu=yes'>教材咨询</a><br/><hr/>
+
+
+</div>
+<div>
+              <table width="100%" height="38" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td width="250" align="right" class="f12_orange linkf12_orange">
+                    <!-- 这里是登陆注册
+                    [<iframe src="/module/membercenter/membertoplogin.jsp" style="width:200px;overflow:hidden; border:0;" height="20" frameborder="0" scrolling="No"></iframe>]
+                    -->
+                    	<span id="loginout"></span>
+                    	<script type="text/javascript">
+                    	setTimeout("seeloginout('loginout')",500) ;
+                    	</script></td>
+                    <td width="80" align="right" class="gwc_line linkf12_wryh"><a href="/module/goods/shoppingcart.jsp" onmousemove="showgwc()" onmouseout="showoutgwc()">购物车</a></td>
+                    <td width="86" align="right" class="hyzx_line linkf12_wryh"><a href="/module/membercenter/hyzx.jsp">会员中心</a></td>
+                    <td width="90" align="right" class="zxzx_line linkf12_wryh"><a href="#" onmousemove="showzxjl()" onmouseout="showoutzxjl()">在线咨询</a></td>
+                    <td width="16" align="right"><img src="/templates/images/zxzx_h_line.jpg" width="11" height="9" /></td>
+                    <td width="86" align="right" class="wzdl_line linkf12_wryh"><a href="/wzdh/index.shtml">网站导航</a></td>
+					<td align="right" width="86" class="linkf12_wryh pad_r10 sj_line"><a href="http://wap.phei.com.cn" target="_blank">手机PHEI</a></td>
+                  </tr>
+                </table>
+				</div>
+               </div>
+              </td>
+            </tr>
+          </table></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table>
+<script language="javascript">
+	function showgwc(){
+		getgwcajax();
+		document.getElementById("Layer3").style.display="block";
+	}
+	function showoutgwc(){
+		document.getElementById("Layer3").style.display="none";
+	}
+	function showmoveDivgwc(){
+	  //getgwcajax();
+	  document.getElementById("Layer3").style.display="block";
+	}
+	function showOutDivgwc(){
+	document.getElementById("Layer3").style.display="none";
+	}
+	//在线咨询
+	function showzxjl(){
+		//getzxzxajax();
+		document.getElementById("Layer4").style.display="block";
+	}
+	function showoutzxjl(){
+		document.getElementById("Layer4").style.display="none";
+	}
+	function showmoveDivzxjl(){
+		//getzxzxajax();
+		document.getElementById("Layer4").style.display="block";
+	}
+	function showOutDivzxjl(){
+		document.getElementById("Layer4").style.display="none";
+	}
+
+	function getzxzxajax(){
+
+	var url = "/module/goods/manager/GetZxzx.jsp?time="+new Date().getTime();
+	var str="Layer4";
+	//getAjaxZxzx(url,str);
+}
+function getAjaxZxzx(url,o){
+	var temp = "";
+	xmlHttp = getXmlHttpObject();
+	if(xmlHttp==null){
+		alert('不支持ajax');
+	}
+	xmlHttp.onreadystatechange=stateChanged;
+	xmlHttp.open("GET",url,true);
+	xmlHttp.send(null);
+	function stateChanged(){
+		if (xmlHttp.readyState==4){
+			if(o=="Layer4"){
+			 var t1 = "";
+			 var temp1 =  xmlHttp.responseText;
+
+						t1 = temp1;
+				//	alert(t1);
+				var tempdiv = document.getElementById(o);
+				tempdiv.innerHTML = t1;
+
+			}
+		}
+	}
+}
+
+function getAjaxGwc(url,o){
+	var temp = "";
+	xmlHttp = getXmlHttpObject();
+	if(xmlHttp==null){
+		alert('不支持ajax');
+	}
+	xmlHttp.onreadystatechange=stateChanged;
+	xmlHttp.open("GET",url,true);
+	xmlHttp.send(null);
+	function stateChanged(){
+		if (xmlHttp.readyState==4){
+			if(o=="Layer3"){
+			 var t1 = "";
+			 var temp1 =  xmlHttp.responseText;
+
+						t1 = temp1;
+
+				var tempdiv = document.getElementById(o);
+				tempdiv.innerHTML = t1;
+			}
+		}
+	}
+}
+
+function getgwcajax(){
+
+	var url = "/module/goods/manager/GetGwc.jsp?time="+new Date().getTime();
+	var str="Layer3";
+	getAjaxGwc(url,str);
+}
+</script>
+</td>
+</tr>
+
+			   <tr>
+  <td align="center" class="pad_t7">
+    <table width="962" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="left" class="nav"><ul id="topNav">
+            <li class="sy"><a href="/">首页</a></li>
+            <li class="nav_qt"><a href="/gywm/index.shtml">关于我社</a></li>
+            <li class="nav_qt"><a href="/module/goods/wssd_index.jsp">网上书店</a></li>
+            <li class="nav_qt"><a href="/module/dealer/jxs_home_before.jsp">经销商园地</a></li>
+            <li class="nav_qt"><a href="/module/contribution/wstg_index.jsp">网上投稿</a></li>
+			<!--
+            <li class="nav_qt"><a href="/module/goods/tslz_index.jsp">在线读书</a></li>
+			-->
+			<li class="nav_qt"><a target="_bank" href="http://www.hxpress.com.cn/shop/ItemList.aspx">在线读书</a></li>
+            <li class="nav_qt"><a href="/module/zygl/zxzyindex.jsp">在线资源</a></li>
+            <li class="nav_qt"><a target="_bank" href="http://www.hxpress.com.cn">电子书</a></li>
+		<li class="nav_qt"><a target="_bank" href="/module/zpgl/jobappview.jsp">人才招聘</a></li>
+            <li class="lt"><a target="_bank" href="/bbs/index.shtml">留言板</a></li>
+          </ul>
+      </td>
+		 <script language="javascript">
+		var oDiv = document.getElementById("topNav");
+		var oLis = oDiv.getElementsByTagName("li");
+		var curhref = document.location.href;
+		if(curhref.indexOf("/gywm/")>0){
+			oLis[1].className="nav_qt2";
+		}
+		if(curhref.indexOf("/module/goods/")>0 && curhref.indexOf("/module/goods/tslz_")<0){
+			oLis[2].className="nav_qt2";
+		}
+		if(curhref.indexOf("/module/dealer/")>0){
+			oLis[3].className="nav_qt2";
+		}
+		if(curhref.indexOf("/module/contribution/")>0){
+			oLis[4].className="nav_qt2";
+		}
+		if(curhref.indexOf("/module/goods/tslz_")>0){
+			oLis[5].className="nav_qt2";
+		}
+		if(curhref.indexOf("/module/zygl/")>0){
+			oLis[6].className="nav_qt2";
+		}
+		if(curhref.indexOf("/module/dzsgl/")>0){
+			oLis[7].className="nav_qt2";
+		}
+
+		//alert(curhref);
+		</script>
+      </tr>
+    </table></td>
+</tr>
+
+        </table>
+		<table width="982" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center">
+	<table width="962" border="0" cellspacing="0" cellpadding="0">
+
+	  <tr>
+	    <td class="pad_t1"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="left" class="yellow_bg line_h29 linef12_black pad_left17">
+			<!--keywordslist-->
+			<a href='javascript:gotopagedaohang("计算机","2");'>计算机</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<!--/keywordslist--><!--keywordslist-->
+			<a href='javascript:gotopagedaohang("电子技术","1");'>电子技术</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<!--/keywordslist--><!--keywordslist-->
+			<a href='javascript:gotopagedaohang("通信与网络","1");'>通信与网络</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<!--/keywordslist--><!--keywordslist-->
+			<a href='javascript:gotopagedaohang("电工技术","1");'>电工技术</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<!--/keywordslist--><!--keywordslist-->
+			<a href='javascript:gotopagedaohang("机械/仪器仪表","1");'>机械/仪器仪表</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<!--/keywordslist--><!--keywordslist-->
+			<a href='javascript:gotopagedaohang("建筑","1");'>建筑</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<!--/keywordslist--><!--keywordslist-->
+			<a href='javascript:gotopagedaohang("考试与认证_科技","1");'>考试与认证_科技</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<!--/keywordslist--><!--keywordslist-->
+			<a href='javascript:gotopagedaohang("经济管理","3");'>经济管理</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<!--/keywordslist--><!--keywordslist-->
+			<a href='javascript:gotopagedaohang("本科研究生","1");'>本科研究生</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<!--/keywordslist--><!--keywordslist-->
+			<a href='javascript:gotopagedaohang("教育","1");'>教育</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<!--/keywordslist--><!--keywordslist-->
+			<a href='javascript:gotopagedaohang("高职高专","1");'>高职高专</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<!--/keywordslist--><!--keywordslist-->
+			<a href='javascript:gotopagedaohang("中职","1");'>中职</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<!--/keywordslist--><!--keywordslist-->
+			<a href='javascript:gotopagedaohang("中小学教育","1");'>中小学教育</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<!--/keywordslist--><!--keywordslist-->
+			<a href='javascript:gotopagedaohang("考试与认证_教育","1");'>考试与认证_教育</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<!--/keywordslist--><!--keywordslist-->
+			<a href='javascript:gotopagedaohang("少儿","7");'>少儿</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<!--/keywordslist--><!--keywordslist-->
+			<a href='javascript:gotopagedaohang("社科/人文","5");'>社科/人文</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<!--/keywordslist--><!--keywordslist-->
+			<a href='javascript:gotopagedaohang("大众","1");'>大众</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<!--/keywordslist--><!--keywordslist-->
+			<a href='javascript:gotopagedaohang("艺术","4");'>艺术</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<!--/keywordslist--><!--keywordslist-->
+			<a href='javascript:gotopagedaohang("科普/百科","1");'>科普/百科</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<!--/keywordslist--><!--keywordslist-->
+			<a href='javascript:gotopagedaohang("生活/健康","6");'>生活/健康</a>
+			<!--/keywordslist-->
+			</td>
+          </tr>
+        </table></td>
+	  </tr>
+
+<script language="javascript">
+function gotopagedaohang(str,num){
+	var newstr = encodeURIComponent(str);
+	//window.open('/module/goods/jsjts_index.jsp?goodtypeid=1&num='+num+'&goodtypename='+newstr,"");
+	location.href="/module/goods/jsjts_index.jsp?goodtypeid=1&num="+num+"&goodtypename="+newstr,"";
+}
+</script>
+
+       <tr>
+        <td class="pad_t1">
+		<script type="text/javascript">
+			function searchsub(){
+				var search_key = document.getElementById("searchKey");
+				if(search_key.value=='请输入书名、书号、作者等关键词'||search_key.value==""){
+					alert("请输入关键字查询");
+				}else{
+					searchform.submit();
+				}
+			}
+		</script>
+
+<script language="javascript">
+       //创建XMLHttpReques对象
+       function createXMLHttpRequest() {
+          if (window.XMLHttpRequest) {
+               //Mozilla 浏览器
+               XMLHttpReq = new XMLHttpRequest();
+            } else{
+                // IE浏览器
+                if (window.ActiveXObject) {
+                  try {
+                         XMLHttpReq = new ActiveXObject("Msxml2.XMLHTTP");
+                      }catch (e) {
+                         try {
+                                XMLHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
+                             }catch (e) { }
+                      }
+                 }
+            }
+        }
+       //处理服务器响应结果
+       function handleResponse() {
+        // 判断对象状态
+        if (XMLHttpReq.readyState == 4) {
+            // 信息已经成功返回，开始处理信息
+           if (XMLHttpReq.status == 200) {
+                clearTable();
+                var out = "";
+                var res = XMLHttpReq.responseXML;
+				//alert("res="+res);
+
+                var items = res.getElementsByTagName("item");
+				//alert("items="+items.length);
+
+				//alert("adassssssss=>>>>="+items[0].firstChild.nodeValue);
+                for(var i=0;i<items.length;i++)
+                {
+                   //addRow(items(i).firstChild.nodeValue);
+				   addRow(items[i].firstChild.nodeValue);
+                }
+                setDivStyle();
+             }
+         }
+       }
+       //清除表格中的结果
+       function clearTable()
+       {
+           var content = document.getElementById("content");
+           while(content.childNodes.length>0)
+           {
+               content.removeChild(content.childNodes[0]);
+           }
+
+       }
+       //向输入提示的表格中添加一行记录
+       function addRow(item)
+       {
+           var content = document.getElementById("content");
+           var row = document.createElement("tr");
+           var cell = document.createElement("td");
+           cell.appendChild(document.createTextNode(item));
+           cell.onmouseover = function(){this.style.background="#97D0EC"};
+           cell.onmouseout = function(){this.style.background="#EEF8FD"};
+           cell.onclick = function(){
+           document.getElementById("searchKey").value=this.innerHTML;
+           document.getElementById("suggest").style.visibility="hidden"};
+           row.appendChild(cell);
+           content.appendChild(row);
+
+       }
+      //发送客户端的请求
+      function sendRequest(url) {
+            createXMLHttpRequest();
+            XMLHttpReq.open("GET", url, true);
+            //指定响应函数
+            XMLHttpReq.onreadystatechange = handleResponse;
+            // 发送请求
+            XMLHttpReq.send(null);
+       }
+       //调用Ajax自动提示功能
+       function suggest()
+       {
+            var key = document.getElementById("searchKey").value;
+			var newstr = encodeURIComponent(key);
+            sendRequest("/module/goods/searchajax.jsp?searchKey="+newstr);
+       }
+
+       //设置输入提示框的位置和风格
+      function setDivStyle()
+        {
+           var suggest = document.getElementById("suggest");
+            suggest.style.border = "#CCE0EB 1px solid";
+            //suggest.style.left = 213;
+            //suggest.style.top = 140;
+           //suggest.style.width = 195;
+            //suggest.style.backgroundColor = "#EEF8FD"
+            document.getElementById("suggest").style.visibility="visible"
+      }
+	   function searchhidden(){
+	   	document.getElementById("suggest").style.visibility="hidden";
+	   }
+     </script>
+
+		<form name="searchform" method="post" action="/module/goods/searchkey.jsp"><table width="100%" height="30" border="0" cellpadding="0" cellspacing="0" class="bod_all_blue search_bg">
+            <tr>
+              <td width="126" align="right" class="search_line">图书搜索：</td>
+              <td width="203" align="left">
+			  <div style="position:relative; left:0;top:0; height:30px; width:203px;">
+			  <div style="position:absolute; left:0px; top:0px; width:195px;height:30px;"><input name="searchKey" id="searchKey" type="text" class="wb_ys" value="请输入书名、书号、作者等关键词"  onfocus="if(this.value=='请输入书名、书号、作者等关键词'){this.value='';}" onkeyup="suggest()" style="height:24px;line-height:24px;text-align:left;"/></div>
+			  <div id="suggest" style="position:absolute; left:0px; top:26px; width:195px;"><table style="background:#EEF8FD;">
+											         <tbody id="content" style="line-height:22px; background:#EEF8FD; border-bottom:2px #f00 solid;"></tbody>
+											      </table></div>
+			  </div>
+
+
+              </td>
+              <td width="54" align="left"><img onclick="searchsub()" src="/templates/images/but_search.jpg" width="48" height="19" border="0" /></td>
+              <td width="91" align="left"><a href="/module/goods/gjsearch.jsp" target="_blank"><img src="/templates/images/but_gjss.jpg" width="68" height="19" border="0" /></a></td>
+              <td width="277" align="left" class="f12_orange linkf12_orange"><span class="f14b_grey">热搜关键字：</span><a href='http://www.phei.com.cn/module/zygl/zxzyindex.jsp'><font color=#FF0000><strong>财经法规模拟卷勘误表</strong></font></a>&nbsp;
+</td>
+              <td width="85" align="left" class="wswz_line f12_black"><a href="/lxwm/2010-11-24/74.shtml">我社位置</a></td>
+            <td align="left" class="sjxz_line f12_black"><a href="/module/zygl/moreresourcelist.jsp?sort=Marc%E6%95%B0%E6%8D%AE">MARC数据下载</a></td>
+            </tr>
+          </table></form></td>
+      </tr>
+
+    </table></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" class="pad_t10"><table width="960" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="230" valign="top">
+
+		<!-- 相关图书 -->
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="blue_bg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" class="xgts_line f14_whlie">相关图书</td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top" class="bod_blue"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="center" valign="top">
+                  <div id="xgtslist"><!--这里展示根据浏览记录向您推荐--></div>
+		                <script type="text/javascript">
+						setTimeout("seexgts(10,'xgtslist',42345)",2600) ;    //延迟加载;
+				 		</script>
+				 		</td>
+              </tr>
+            </table></td>
+          </tr>
+        </table>
+
+
+		<!-- 还买了 -->
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="mar_t10">
+          <tr>
+            <td class="blue_bg3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" class="gmgk_line f14_whlie">购买过本书的顾客还买过</td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top" class="bod_blue"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="center" valign="top" class="pad_t10">
+
+             <div id="haimailelist"><!--这里展示根据浏览记录向您推荐--></div>
+		                <script type="text/javascript">
+				 			setTimeout("seehaimaile(10,'haimailelist',42345)",1200) ;    //延迟加载;
+				 		</script><table width="200" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td height="30" align="right"><a href="/module/goods/searchkey.jsp?tuijian=6&bookid=42345"><img src="images/more_04.jpg" width="41" height="11" border="0" /></a></td>
+              </tr>
+            </table></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table>
+
+
+
+        <!--浏览过本书的顾客还看过 include-->
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="mar_t10">
+     <tr>
+       <td class="blue_bg3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+         <tr>
+           <td align="left" class="ylbs_line f14_whlie">浏览过本书的顾客还看过</td>
+         </tr>
+       </table></td>
+     </tr>
+     <tr>
+       <td align="center" valign="top" class="bod_blue"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+         <tr>
+           <td align="center" valign="top" class="pad_t10">
+          <div id="seeoneseemorelist"><!--这里展示根据浏览记录向您推荐--></div>
+		                <script type="text/javascript">
+						setTimeout("seeoneseemore(10,'seeoneseemorelist',42345)",1000) ;    //延迟加载;
+				 		</script><table width="200" border="0" cellspacing="0" cellpadding="0">
+         <tr>
+           <td height="30" align="right"><a href="/module/goods/searchkey.jsp?tuijian=5&bookid=42345"><img src="images/more_04.jpg" width="41" height="11" border="0" /></a></td>
+         </tr>
+       </table></td>
+         </tr>
+       </table></td>
+     </tr>
+   </table>
+
+
+		 <!--最近浏览include-->
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="mar_t10">
+          <tr>
+            <td class="blue_bg3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" class="zjyl_line f14_whlie">最近浏览</td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top" class="bod_blue"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="center" valign="top" class="pad_t10 pad_bot20">
+
+
+
+		            <div id="cookielist"><!--最近浏览--></div>
+		                <script type="text/javascript">
+		              setTimeout("seegoodcookie(5,'cookielist',42345)",2000) ;    //延迟加载;
+				 		</script>
+
+            	</td>
+              </tr>
+            </table></td>
+          </tr>
+        </table>
+
+		<!-- 浏览推荐 -->
+
+        <!-- 浏览推荐2222 -->
+
+		 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mar_t10">
+          <tr>
+            <td class="blue_bg3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" class="gjyl_line f14_whlie">根据浏览记录向您推荐</td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top" class="bod_blue"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="center" valign="top">
+                <input type="hidden" name="goodid0" id="goodid0" value="42345"/>
+                <div id="tuijianbyseelist"><!--这里展示根据浏览记录向您推荐--></div>
+                <script type="text/javascript">
+		 			gettuijianbysee2(5,'tuijianbyseelist');
+		 		</script>
+				</td>
+              </tr>
+			  <tr>
+			    <td height="30" align="right" class="pad_r14"><a href="/module/goods/searchkey.jsp?tuijian=4"><img src="images/more_04.jpg" width="41" height="11" border="0" /></a></td>
+			  </tr>
+            </table></td>
+          </tr>
+        </table>
+
+
+
+
+
+
+		</td>
+        <td width="10">&nbsp;</td>
+        <td width="720" valign="top">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="bod_all_blue">
+          <tr>
+            <td height="32" align="left" class="f16_blue bod_bot_blue blue_bg4">&nbsp;&nbsp;计算机：一部历史&nbsp;&nbsp;</td>
+          </tr>
+          <tr>
+            <td valign="top" class="pad_t20"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="270" align="center" valign="top"><table width="172" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="236" align="center" class="bod_all_blue"><img src="http://218.249.32.138/web/9787121255113.jpg" width="160" height="225" /></td>
+                  </tr>
+                  <tr>
+                    <td height="26" align="center" valign="bottom" class="f12_black"><a href="#picShow" rel="facebox">点击此处查看完整封面</a></td>
+                  </tr>
+                  <tr>
+                    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+
+                       <td width="50%" height="40" align="left" class="sdcs_line linef12b_blue" style="display:none"><a target="_blank" href="http://www.hxpress.com.cn/onlinereader/read.aspx?docName=">试读此书</a></td>
+					   <!-- 原来的/module/goods/tslz_content.jsp?gid=<!-bookid->-->
+                        <td width="50%" height="40" align="right" class="zjxz_line1 linef12b_blue" style="display:none"><a href="">章节下载 <!--onmousemove="show()" onmouseout="showout()" --></a></td>
+
+                      </tr>
+                    </table></td>
+                  </tr>
+                </table>
+                            </td>
+                <td width="448" align="left" valign="top">
+                <form name="buyform" method="post" action="">
+                <table width="405" border="0" cellspacing="0" cellpadding="0">
+                 <tr style="display:none">
+                    <td height="20" align="left" class="f12_grey linkf12b_blue">丛书名 ：<a href="javascript:gotopagesearch('')"></a></td>
+                  </tr>
+                  <tr style="display:block">
+                    <td height="20" align="left" class="f12_grey linkf12_blue">著&nbsp;&nbsp;&nbsp;&nbsp;者：<a href="javascript:gotopage('Peter J.Bentley（彼得&#8226;本特利）')">Peter J.Bentley（彼得&#8226;本特利）</a></td>
+                  </tr>
+                  <tr>
+                    <td height="20" align="left" class="f12_grey linkf12_blue">作&nbsp;译&nbsp;者：<a href="javascript:gotopage('顾纹天')">顾纹天</a></td>
+                  </tr>
+ <script language="javascript">
+function gotopage(str){
+	var newstr = encodeURIComponent(str);
+	location.href='/module/goods/searchkey.jsp?searchKey='+newstr;
+}
+function gotopagesearch(str){
+	var newstr = encodeURIComponent(str);
+	location.href='/module/goods/searchkey.jsp?congshu=1&searchKey='+newstr;
+}
+</script>
+                  <tr>
+                    <td align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td height="20" align="left" class="f12_grey">出版时间：2015-03</td>
+                        <td width="150" height="20" align="left" class="f12_grey">千&nbsp;字&nbsp;数：300</td>
+                      </tr>
+                      <tr>
+                        <td height="20" align="left" class="f12_grey">版&nbsp;&nbsp;&nbsp;&nbsp;次：01-01  </td>
+                        <td width="150" height="20" align="left" class="f12_grey">页&nbsp;&nbsp;&nbsp;&nbsp;数：344 </td>
+                      </tr>
+                      <tr>
+                        <td height="20" align="left" class="f12_grey" style=" display:none">印刷时间：</td>
+                        <td width="150" height="20" align="left" class="f12_grey">开&nbsp;&nbsp;&nbsp;&nbsp;本：16(170*230)   </td>
+                      </tr>
+                      <tr>
+                        <td style="display:none" height="20" align="left" class="f12_grey">印&nbsp;&nbsp;&nbsp;&nbsp;次：01-01  </td>
+                        <td width="150" height="20" align="left" class="f12_grey">装&nbsp;&nbsp;&nbsp;&nbsp;帧：</td>
+                      </tr>
+                      <tr>
+                        <td height="20" align="left" class="f12_grey">I&nbsp;S&nbsp;B&nbsp;N ：9787121255113</td>
+                        <td width="150" height="20" align="left">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td height="20" align="left" class="f12_grey" style="display:none;">重&nbsp;&nbsp;&nbsp;&nbsp;印：新书</td>
+                        <td width="150" height="20" align="left" class="f12_grey">换&nbsp;&nbsp;&nbsp;&nbsp;版：</td>
+                      </tr>
+                    </table></td>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top" class="f12_grey linkf12_blue pad_t5 pad_bot15 bod_grey_bot">所属分类：<a href="/module/goods/searchkey.jsp?goodtype=科技">科技</a>&nbsp;>>&nbsp;<a href="/module/goods/searchkey.jsp?goodtype=计算机">计算机</a>&nbsp;>>&nbsp;<span class="f12_blue"><a href="/module/goods/searchkey.jsp?goodtype=网络与互联网">网络与互联网</a></span></td>
+                  </tr>
+				  <tr>
+                    <td height="20" align="left" class="f12_grey pad_t10" style="display:none;">广告语：&nbsp;&nbsp;&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="20" align="left" class="f12_grey pad_t10">纸质书定价：￥68.0&nbsp;&nbsp;&nbsp;<span class="f12_red">会员价：￥54.40</span>&nbsp;&nbsp;&nbsp;折扣：<span class="f12_red">80折</span>&nbsp;&nbsp;&nbsp;节省：￥13</td>
+                  </tr>
+				  <tr>
+                    <td height="20" align="left" class="f12_grey pad_t10 f14b_blue1">
+					<font size='3'><input type="hidden" name="miaosha" id="miaosha" value=""/><a href="/module/goods/cxhd.jsp"><!--field13--></a></font>					</td>
+                  </tr>
+
+                  <tr>
+                    <td height="20" align="left" class="f12_grey"><span style="display:none;">电子书定价：￥<!--dzsgoodprice--></span></td>
+                  </tr>
+                  <tr>
+                    <td height="20" align="left" class="linkf12_blue f12_grey">送积分：68&nbsp;&nbsp;&nbsp;&nbsp;
+
+					<a href="/module/membercenter/memberintegralrules2.jsp">积分说明</a>
+
+					</td>
+                  </tr>
+				  <tr>
+                    <td height="20" align="left">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="30" align="left" valign="middle">我要买： <input type="text" name="buynum" id="buynum" class="inp_test3" value="1"/> 件
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#F00;font-size:14px; font-weight:bold;">库存:有</span></td>
+                  </tr>
+                  <script type="text/javascript">
+                  function buyUrl(bid){
+                  	var pcounts = document.getElementById("buynum").value;
+                        var patrn = /^[0-9]{1,4}$/;
+                        if (!patrn.exec(pcounts)) {
+                            pcounts = 1;
+                        }
+                        else {
+                            if (pcounts <= 0)
+                                pcounts = 1;
+                            if (pcounts >= 1000)
+                                pcounts = 999;
+                        }
+                      var hid_miaosha = document.getElementById("miaosha").value;
+                      if(hid_miaosha.length>1){//说明是秒杀
+							alert(hid_miaosha);
+                      }
+					location.href="./shopcar0.jsp?bookid="+bid+"&num="+pcounts;
+
+                  }
+
+                  //这里是买电子书
+                  function buyDzsUrl(bid){
+					location.href="./shopcar0.jsp?ebookid="+bid;
+                  }
+                  //添加收藏
+//                  function getAjaxRequestTextaddF(url,o){
+//					var temp = "";
+//					xmlHttp = getXmlHttpObject();
+//					if(xmlHttp==null){
+//						alert('浏览器不支持ajax');
+//					}
+//					xmlHttp.onreadystatechange=stateChanged;
+//					xmlHttp.open("GET",url,true);
+//					xmlHttp.send(null);
+//					function stateChanged(){
+//						if (xmlHttp.readyState==4){
+//							//这里说明添加收藏成功
+//						}
+//					}
+//                 }
+                  function addmyfavourite(bid){
+					location.href="/module/goods/favourite.jsp?bookid="+bid+"&method=addfavourite";
+                  }
+                  </script>
+                  <tr><td height="40" valign="middle" style="color:#F00;font-size:12px; font-weight:bold;" ><span style="display:none;">注意：此书目前暂时缺货，请致电010-88254888确认后再进行购书。</span></td></tr>
+                  <tr>
+                    <td height="50" align="left">
+                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="83" align="left" valign="top"> <img src="images/but_sc.jpg"  onclick="addmyfavourite(42345)" style="cursor:hand;" width="74" height="24" border="0" />                   </td>
+    <td width="113" align="left" valign="top"><span style="display:;"><img src="images/but_zzsgm.jpg" style="cursor:hand;"  onclick="buyUrl(42345);" width="103" height="24" border="0" /></sapn></td>
+    <td align="left" valign="top"> <span style="display:none;"><a target="_blank" href="http://www.hxpress.com.cn/shop/ItemDetail.aspx?MetaID="><img src="images/but_dzsgm.jpg" style="cursor:hand;" width="103" height="24" border="0" /></a>&nbsp;&nbsp;</span></td>
+  </tr>
+</table>
+
+                    </td>
+                  </tr>
+                  <tr>
+
+                    <td height="35" align="left" valign="top" class="linkf12_blue">共有图书评论0 条&nbsp;&nbsp;&nbsp;&nbsp;<a href="/module/comment/commentall.jsp?bookid=42345">查看评论摘要</a>&nbsp;&nbsp;<a style="display:none" href="/module/goods/zjsp.jsp?bookid=42345">查看精彩书评</a></td>
+                  </tr>
+                </table>
+                </form></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table>
+
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="bod_all_blue mar_t10" style="display:none;">
+          <tr>
+		   <td class="blue_bg4"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+            <td align="left" class="bod_bot_blue f14_Brown zjzh_line">最佳组合</td>
+          </tr>
+</table>
+</td>
+		  </tr>
+		  <script type="text/javascript">
+		  	//这里是拍档的部分
+		  	function checkSelect() {
+			  	var sumnum_span = document.getElementById("sumnumspan");
+			  	var sumprice_span = document.getElementById("sumpricespan");
+			  	var sumhuiyuan_span = document.getElementById("sumhuiyuanspan");
+			  	var discount_1 = document.getElementById("discount1");
+			  	var discount_1 = document.getElementById("discount2");
+			  	var huiyuan_ = parseFloat(document.getElementById("huiyuanprice").value);
+		  		var price_ = parseFloat(document.getElementById("price").value);
+		  		var allprice = 0;
+		  		var allhuiyuan = 0;
+		  		var allid = "";
+		        var i;
+		        var idStr = document.getElementsByName("sumgoodid");
+		        var sum_num = 1;
+		        for (i = 0; i < idStr.length; i++) {
+		            if (idStr[i].checked == true) {
+			            var temp = idStr[i].value;
+			            var tempf = 0;
+			            var tempf2 = 0;
+		                tempf = parseFloat(temp.substr(temp.indexOf("_")+1,temp.lastIndexOf("_")));
+		                tempf2 = parseFloat(temp.substr(temp.lastIndexOf("_")+1));
+		                allprice = allprice + tempf;
+		                allhuiyuan = allhuiyuan + tempf2*tempf*0.1;
+		                sum_num = sum_num+1;
+		            }
+		        }
+		        sumnum_span.innerHTML = ""+sum_num;
+				var all_price="";
+				all_price=""+(price_+allprice);
+				var all_huiyuan="";
+				all_huiyuan=""+(huiyuan_+allhuiyuan);
+		        sumprice_span.innerHTML =  new Number(all_price.toString()).toFixed(2);//
+		        sumhuiyuan_span.innerHTML =  new Number(all_huiyuan.toString()).toFixed(2);//
+		        //return false;
+		    }
+			//这里是组合购买
+		    function subzh(){
+		    	var idStr = document.getElementsByName("sumgoodid");
+		        var sum_num = 1;
+		        for (i = 0; i < idStr.length; i++) {
+		            if (idStr[i].checked == true) {
+		                sum_num = sum_num+1;
+		            }
+		        }
+		        if(sum_num>1){
+					if("有"!="有"){
+						alert("要拍档的图书中有库存不足的，请购买有库存的图书");
+					}else{
+						formpartner.submit();
+					}
+
+		        }else{
+					alert("请选择要拍档的图书");
+			    }
+			}
+		  </script>
+
+          <tr>
+            <td valign="top">
+            <form name="formpartner" method="post" action="/module/goods/shopcarpartner.jsp">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="270" align="center" valign="top" class="pad_t20 pad_bot20"><table width="188" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td align="center" valign="top" class="zjzh_bod pad_t10">
+                    <table width="153" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+
+                        <td width="59" height="80" align="center" class="bod_all_grey1"><img src="http://218.249.32.138/thumbs/9787121255113.jpg" width="51" height="72" /></td>
+
+                        <td width="31" align="center"  style="display:<!--haspartnerstylep1-->;"><img src="images/jahao.jpg" width="11" height="11" /></td>
+                        <td width="59" height="80" align="center" class="bod_all_grey1" style="display:<!--haspartnerstylep1-->;"><img src="<!--goodcoverimagep1-->" width="51" height="72" /></td>
+                      	<td width="31" align="center" style="display:<!--haspartnerstylep2-->;"><img src="images/jahao.jpg" width="11" height="11" /></td>
+                        <td width="59" height="80" align="center" class="bod_all_grey1" style="display:<!--haspartnerstylep2-->;"><img src="<!--goodcoverimagep2-->" width="51" height="72" /></td>
+
+                      </tr>
+                      <tr>
+                        <td width="61">&nbsp;</td>
+                        <td width="31">&nbsp;</td>
+                        <td align="left" class="line_h21 linkf12_blue pad_t5" style="display:<!--haspartnerstylep1-->;" >
+                        	<input type="hidden" name="goodid" value="42345"/>
+                        	<input type="hidden" name="price" id="price" value="68.0"/>
+                        	<input type="hidden" name="price1" id="price1" value="<!--goodprice1-->"/>
+                        	<input type="hidden" name="price2" id="price2" value="<!--goodprice2-->"/>
+                        	<input type="hidden" name="huiyuanprice" id="huiyuanprice" value="54.40"/>
+                        	<input type="hidden" name="discount1" id="discount1" value="<!--gooddiscount1-->"/>
+                        	<input type="hidden" name="discount2" id="discount2" value="<!--gooddiscount2-->"/>
+                        	<input type="checkbox" onclick="checkSelect()" name="sumgoodid" checked value="<!--goodid1-->_<!--goodprice1-->_<!--gooddiscount1-->" /><a href="/module/goods/wssd_content.jsp?bookid=<!--goodid1-->"><!--goodnamep1--></a> </td>
+                      	<td width="31">&nbsp;</td>
+                        <td align="left" class="line_h21 linkf12_blue pad_t5" style="display:<!--haspartnerstylep2-->;"><input type="checkbox" onclick="checkSelect()" name="sumgoodid" value="<!--goodid2-->_<!--goodprice2-->_<!--gooddiscount2-->" /><a href="/module/goods/wssd_content.jsp?bookid=<!--goodid2-->"><!--goodnamep2--></a> </td>
+
+                      </tr>
+                    </table>
+                      </td>
+                    <td width="10"><img src="images/zjzh_r_bod.jpg" width="10" height="152" /></td>
+                  </tr>
+                </table></td>
+                <td align="left" valign="top" class="pad_t20"><table width="405" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="20" align="left" class="f12_grey">计算机：一部历史</td>
+                  </tr>
+                  <tr>
+                    <td height="20" align="left" class="f12_grey bod_grey_bot pad_bot10">与此 <span id="sumnumspan"><!--sumnum--></span>件组合商品一同购买</td>
+                  </tr>
+                  <tr>
+                    <td height="20" align="left" class="f12_grey pad_t10">总定价：￥<span id="sumpricespan"><!--sumprice--></span></td>
+                  </tr>
+                  <tr>
+                    <td height="20" align="left" class="f12_red">组合价：￥<span id="sumhuiyuanspan"><!--sumhuiyuanprice--></span></td>
+                  </tr>
+                  <tr>
+                    <td height="40" align="left"><img src="images/but_gmzh.jpg" style="cursor:hand;" onclick="subzh()" width="105" height="24" border="0" /></td>
+                  </tr>
+                </table></td>
+              </tr>
+            </table>
+           </form>
+            </td>
+          </tr>
+        </table>
+
+
+<table style="display:none;" width="100%" border="0" cellspacing="0" cellpadding="0" class="bod_all_blue mar_t10">
+          <tr>
+		   <td class="blue_bg4"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+            <td align="left" class="bod_bot_blue f14_Brown nrjj_line">获奖信息</td>
+          </tr>
+</table>
+</td>
+		  </tr>
+          <tr>
+            <td align="center" valign="top" style="padding-bottom:10px;">
+			<table width="90%" border="0" cellspacing="0" cellpadding="0" align="center" style="margin-top:10px; display:none;border-left:solid 1px #CCE0EB;border-top:solid 1px #CCE0EB;"  >
+		<tr>
+		  <td  width="100" height="28" align="center" valign="middle" class="bor_change_br bod  f14_Brown blue_bg4" style="border-bottom:solid 1px #CCE0EB;border-right:solid 1px #CCE0EB;">年度</td>
+		  <td height="28"  align="center" valign="middle" class="bor_change_br f14_Brown blue_bg4" style="border-bottom:solid 1px #CCE0EB;border-right:solid 1px #CCE0EB;">获奖名称</td>
+		</tr>
+
+		</table>
+			</td>
+          </tr>
+        </table>
+
+
+
+<script language="javascript">
+function hjtslist(str){
+	var newstr = encodeURIComponent(str);
+    location.href="hjtslist.jsp?zpname="+newstr;
+}
+
+
+
+function gettypecxts(num){
+	var tdname1 = document.getElementById("tdname1");
+	var tdname2 = document.getElementById("tdname2");
+	var tdname3= document.getElementById("tdname3");
+	var neirong = document.getElementById("neirong");
+	var mulu = document.getElementById("mulu");
+	var qianyan = document.getElementById("qianyan");
+	neirong.style.display="block";
+	mulu.style.display="none";
+	qianyan.style.display="none";
+	if(num==1){
+		tdname1.className="jptj_qh_bt_on";
+		tdname2.className="jptj_qh_bt_off";
+		tdname3.className="jptj_qh_bt_off";
+		neirong.style.display="block";
+		mulu.style.display="none";
+		qianyan.style.display="none";
+	}if(num==2){
+		tdname1.className="jptj_qh_bt_off";
+		tdname2.className="jptj_qh_bt_on";
+		tdname3.className="jptj_qh_bt_off";
+		neirong.style.display="none";
+		mulu.style.display="";
+		qianyan.style.display="none";
+	}if(num==3){
+		tdname1.className="jptj_qh_bt_off";
+		tdname2.className="jptj_qh_bt_off";
+		tdname3.className="jptj_qh_bt_on";
+		neirong.style.display="none";
+		mulu.style.display="none";
+		qianyan.style.display="block";
+	}
+}
+</script>
+        <table width="719" border="0" cellspacing="0" cellpadding="0" align="center" style="margin-top:10px;">
+          <tr>
+            <td width="40" class="bor_change_br" >&nbsp;</td>
+            <td width="83" align="center" id="tdname1" class="jptj_qh_bt_on" onmouseover="gettypecxts(1)">内容简介</td>
+            <td width="52" align="center"  id="tdname2" class="jptj_qh_bt_off" onmouseover="gettypecxts(2)">目录</td>
+            <td width="52" align="center"  id="tdname3" class="jptj_qh_bt_off" onmouseover="gettypecxts(3)">前言</td>
+            <td width="492" class="bor_change_b">&nbsp;</td>
+          </tr>
+        </table>
+		<div id="neirong" style="display:block">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="bod_all_blue mar_t10">
+          <tr>
+		   <td class="blue_bg4"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+            <td align="left" class="bod_bot_blue f14_Brown nrjj_line">内容简介</td>
+          </tr>
+</table>
+</td>
+		  </tr>
+          <tr>
+            <td align="center" valign="top"><table width="650" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top" class="line_h24 f12_grey pad_t20 pad_bot20"><p>《计算机：一部历史》，给大众读者写的计算机科普读物，零门槛入门计算机科学。讲述计算机背后鲜为人知的故事，普及关于计算机和互联网，你不得不了解的知识。在过去数十年里，除非你一直与世隔绝，否则就不可能不受到信息革命的影响。我们身处技术演进史上的计算机时代，无论你是计算机和互联网的拥护者、反对者还是旁观者，无论你是否具备计算机专业背景，只要你使用计算机，这本书就是你的案头必备。</p></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table>
+		</div>
+		<div id="mulu" style="display:none">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="bod_all_blue mar_t10">
+          <tr>
+		   <td class="blue_bg4"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+            <td align="left" class="bod_bot_blue f14_Brown ml_ine">目录</td>
+          </tr>
+</table>
+</td>
+		  </tr>
+          <tr>
+            <td align="center" valign="top" class="pad_bot20"><table width="650" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top" class="line_h24 f12_grey pad_t20">
+                <div id="muludiv" style="display:none;">
+				<textarea cols=72 rows=8 style="width:650px;height:180px;border:1px solid #CCE0EB;padding:15px;line-height:20px;">中文版序 vii
+引言 003
+你会计算吗？ 017
+一次性的计算 057
+二进制数字中的生活 101
+响彻世界的声音 145
+计算机把我弄哭了 195
+构建仿生学大脑 237
+计算机改变了我的生活 285
+译后记 329</textarea>
+				</div>
+				</td>
+              </tr>
+			  <tr>
+			   <td height="30" align="left" class="linkf14_orange"><span id="muluspan1"><a onclick="showmuludiv()"  style="cursor: pointer;color:#e90808;">↓展开全部内容</a></span>&nbsp;&nbsp;<span id="muluspan2" style="display:none;"><a onclick="hidmuludiv()"  style="cursor: pointer;color:#e90808;">↑折叠全部内容</a></span></td>
+			  </tr>
+            </table></td>
+          </tr>
+        </table>
+		</div>
+		<div id="qianyan" style="display:none">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="bod_all_blue mar_t10">
+          <tr>
+		   <td class="blue_bg4"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+            <td align="left" class="bod_bot_blue f14_Brown xy_line">序言/前言</td>
+          </tr>
+</table>
+</td>
+		  </tr>
+          <tr>
+            <td align="center" valign="top" class="pad_bot20"><table width="650" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top" class="line_h24 f12_grey pad_t20">
+
+					<span id="qianyanspan1"><a onclick="showqianyandiv()"  style="cursor: pointer;color:#e90808;">↓展开全部内容</a></span><span id="qianyanspan2" style="display:none;"><a onclick="hidqianyandiv()"  style="cursor: pointer;color:#e90808;">↑折叠全部内容</a></span><p>前言</p>
+					<div id="qianyandivll" style="display:block">
+						中文版序
+彼得· 本特利/ 文
+viii 计算机： 一部历史
+千百年来，人类的大脑一直是世界上唯一的计算机。每每想到
+这一点，就不免令人感慨万千。距今大约2600 年前，中国人发明了
+世界上最早的计算用具——算盘，给人类社会带来了彻底的变革。
+中国人现在仍然知道算盘在数学教学活动中的重要性，而世界上大
+多数国家却已将这份宝贵的历史遗产忘得一干二净。算盘之后，计
+算尺、对数表1 和简......
+					</div>
+					<div id="qianyandiv" style="display:none">
+    				<textarea cols=72 rows=8 style="width:650px;height:180px;border:1px solid #CCE0EB;padding:15px;line-height:20px;">中文版序
+彼得· 本特利/ 文
+viii 计算机： 一部历史
+千百年来，人类的大脑一直是世界上唯一的计算机。每每想到
+这一点，就不免令人感慨万千。距今大约2600 年前，中国人发明了
+世界上最早的计算用具——算盘，给人类社会带来了彻底的变革。
+中国人现在仍然知道算盘在数学教学活动中的重要性，而世界上大
+多数国家却已将这份宝贵的历史遗产忘得一干二净。算盘之后，计
+算尺、对数表1 和简单的机械式加法机相继问世，计算科学在漫长的
+历史进程中稳步发展，到了近代，却骤然开始突飞猛进。近几十年
+来，人类社会经历了一场广泛而又深刻的变革。
+在本书中，我将给大家介绍一大批引领计算机科技革命的先行
+者。他们是出类拔萃的天才，拥有超乎寻常的数学能力。是他们提
+出了二进制信息的思想，奠定了计算机器的理论基础，造就了一个
+又一个惠及大众的技术奇迹。我很荣幸能够见到他们中的一些人（ 以
+及与他们共事的研究人员）。这些改变世界面貌的先行者跟我分享了
+不少激励人心而引人入胜的故事。同时，我也很荣幸能够采访当今
+时代引领技术潮流的年轻新秀，聆听他们的精彩故事——其中有不
+1 对数表是指通过计算得出从1 开始各个整数的对数（现在一般用常用对数），所编排成的表格。
+中文版序ix
+少人白手起家，成为了巨富骄子。显然，无论从事哪一个行业，要
+想赚取巨额财富，通晓计算机是必不可少的条件。
+中国已成为计算业大国。在这个令人惊叹的国度里，数以万计
+的大小企业每天都在生产各种各样的计算设备和软件。它们雇佣了
+数百万名员工，产品远销世界各地。2013 年，中国国防科技大学研
+制出了世界上最快的超级计算机——天河二号。
+接下来会发生什么？在计算科学界，我已经学会了不做任何预
+测，因为所有的一切都变化得太快，让人目不暇接。不过，正如本
+书所述，如果你洞悉了改善计算机技术的秘诀，那么，下一个计算
+机先驱很可能就是你。</textarea>
+					</div>
+				</td>
+              </tr>
+            </table></td>
+          </tr>
+        </table>
+		</div>
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="bod_all_blue mar_t10" style="display:none">
+          <tr>
+		   <td class="blue_bg4"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+            <td align="left" class="bod_bot_blue f14_Brown zjsp_line">精彩书评</td>
+          </tr>
+</table>
+</td>
+		  </tr>
+          <tr>
+            <td align="center" valign="top"><table width="650" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top" class="line_h24 f12_grey pad_t20 pad_bot20">
+</td>
+              </tr>
+            </table></td>
+          </tr>
+        </table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="bod_all_blue mar_t10">
+		<tr>
+		   <td class="blue_bg4"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+            <td align="left" class="bod_bot_blue f14_Brown tspl_line">图书评论</td>
+          </tr>
+</table>
+</td>
+		  </tr>
+          <tr>
+            <td align="center" valign="top" class="bod_bot_blue pad_bot20"><table width="650" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top">
+
+
+				<a href="/module/comment/commentall.jsp?bookid=42345"></a>
+
+
+
+
+
+		</td>
+              </tr>
+
+            </table></td>
+          </tr>
+		  			  <tr>
+                <td align="center" valign="top"><table width="650" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td align="left" class="pad_t20">
+                     <iframe src="/module/comment/commentalllogin.jsp?goodid=42345" style="width:650px; height:300px;overflow:hidden; border:0;"  frameborder="0" scrolling="no"></iframe>
+
+                    </td>
+                  </tr>
+                </table></td>
+              </tr>
+		</table>
+		</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td align="center"><table width="960" border="0" cellspacing="0" cellpadding="0" class="bod_all_blue mar_t10">
+      <tr>
+        <td width="189" align="center" class="f12_Brown line_h24 whlie_bg bod_bot_grey4">新手上路</td>
+        <td width="189" align="center" class="f12_Brown line_h24 whlie_bg bod_bot_grey4 bod_left_grey4">付款方式</td>
+        <td width="189" align="center" class="f12_Brown line_h24 whlie_bg bod_bot_grey4 bod_left_grey4">配送服务</td>
+        <td width="189" align="center" class="f12_Brown line_h24 whlie_bg bod_bot_grey4 bod_left_grey4">售后服务</td>
+        <td align="center" class="f12_Brown line_h24 whlie_bg bod_bot_grey4 bod_left_grey4">帮助中心</td>
+      </tr>
+      <tr>
+        <td width="189" align="center" valign="top" class="pad_t8 pad_bot8"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+				 <!--EHM_SystemNav?pcid=102&showlocation=0-->
+
+          <tr>
+            <td align="center" class="line_h24 linkf12_grey"><a href="/xssl/wzjs/2011-07-25/330.shtml">网站介绍</a></td>
+          </tr>
+
+
+          <tr>
+            <td align="center" class="line_h24 linkf12_grey"><a href="/xssl/cpfw/2011-07-28/334.shtml">产品范围</a></td>
+          </tr>
+
+
+          <tr>
+            <td align="center" class="line_h24 linkf12_grey"><a href="/xssl/gszn/2011-07-28/336.shtml">购书指南</a></td>
+          </tr>
+
+
+          <tr>
+            <td align="center" class="line_h24 linkf12_grey"><a href="/xssl/hyjf/2011-07-28/337.shtml">会员积分</a></td>
+          </tr>
+                <!--/EHM_SystemNav-->
+
+        </table></td>
+        <td width="189" align="center" valign="top" class="pad_t8 pad_bot8 bod_left_grey4"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+				 <!--EHM_SystemNav?pcid=103&showlocation=0-->
+
+          <tr>
+            <td align="center" class="line_h24 linkf12_grey"><a href="/fkfs/yhhk/2011-07-29/340.shtml">银行汇款</a></td>
+          </tr>
+
+
+          <tr>
+            <td align="center" class="line_h24 linkf12_grey"><a href="/fkfs/yjhk/2011-07-29/339.shtml">邮局汇款</a></td>
+          </tr>
+
+
+          <tr>
+            <td align="center" class="line_h24 linkf12_grey"><a href="/fkfs/zxzf/2011-07-29/338.shtml">在线支付</a></td>
+          </tr>
+
+
+          <tr>
+            <td align="center" class="line_h24 linkf12_grey"><a href="/fkfs/qkzf/2011-07-29/341.shtml">券卡支付</a></td>
+          </tr>
+
+
+          <tr>
+            <td align="center" class="line_h24 linkf12_grey"><a href="/fkfs/fpzd/2011-07-29/343.shtml">发票制度</a></td>
+          </tr>
+                <!--/EHM_SystemNav-->
+
+        </table></td>
+       <td width="189" align="center" valign="top" class="pad_t8 pad_bot8 bod_left_grey4"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+				 <!--EHM_SystemNav?pcid=104&showlocation=0-->
+
+          <tr>
+            <td align="center" class="line_h24 linkf12_grey"><a href="/psfw/yfsm/2011-08-04/345.shtml">运费说明</a></td>
+          </tr>
+
+
+          <tr>
+            <td align="center" class="line_h24 linkf12_grey"><a href="/psfw/pssj/2011-08-04/346.shtml">配送时间</a></td>
+          </tr>
+
+
+          <tr>
+            <td align="center" class="line_h24 linkf12_grey"><a href="/psfw/psfw/2011-08-04/347.shtml">配送范围</a></td>
+          </tr>
+                <!--/EHM_SystemNav-->
+        </table></td>
+        <td width="189" align="center" valign="top" class="pad_t8 pad_bot8 bod_left_grey4"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+				 <!--EHM_SystemNav?pcid=105&showlocation=0-->
+
+          <tr>
+            <td align="center" class="line_h24 linkf12_grey"><a href="/shfw/thhzc/2010-12-23/168.shtml">退换货政策</a></td>
+          </tr>
+
+
+          <tr>
+            <td align="center" class="line_h24 linkf12_grey"><a href="/shfw/thhlc/2010-12-23/169.shtml">退换货流程</a></td>
+          </tr>
+                <!--/EHM_SystemNav-->
+
+        </table></td>
+        <td width="189" align="center" valign="top" class="pad_t8 pad_bot8 bod_left_grey4"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+				 <!--EHM_SystemNav?pcid=106&showlocation=0-->
+
+          <tr>
+            <td align="center" class="line_h24 linkf12_grey"><a href="/bzzx/cjrdwt/2010-12-23/174.shtml">常见热点问题</a></td>
+          </tr>
+
+
+          <tr>
+            <td align="center" class="line_h24 linkf12_grey"><a href="/bzzx/zhmm/2010-12-23/175.shtml">找回密码</a></td>
+          </tr>
+
+
+          <tr>
+            <td align="center" class="line_h24 linkf12_grey"><a href="/bzzx/lxkf/2011-08-04/348.shtml">联系客服</a></td>
+          </tr>
+
+
+          <tr>
+            <td align="center" class="line_h24 linkf12_grey"><a href="/bzzx/hkdzl/2011-08-04/349.shtml">汇款单招领</a></td>
+          </tr>
+                <!--/EHM_SystemNav-->
+        </table></td>
+      </tr>
+    </table>
+</td>
+  </tr>
+  <tr>
+    <td align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+       <tr>
+  <td align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="center"><table width="960" border="0" cellspacing="0" cellpadding="0" class="mar_t10">
+            <tr>
+              <td align="center" class="bot_nav_bg linkf12_whlie f12_whlie"><a href="/qkjs/2011-12-12/435.shtml">期刊介绍</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/lxwm/2010-11-24/74.shtml">联系我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/module/zpgl/jobappview.jsp">人才招聘</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://wap.phei.com.cn" target="_blank">手机PHEI</a>|&nbsp;&nbsp;<a href="http://e.weibo.com/dzgy" target="_blank">官方微博</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/wzdh/index.shtml">网站导航</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/wzbz/2010-12-23/177.shtml">网站帮助</a></td>
+            </tr>
+          </table></td>
+      </tr>
+    </table></td>
+</tr>
+<tr>
+  <td align="left" class="pad_t15 pad_bot20"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="center" class="line_h21">电子工业出版社地址：北京市万寿路南口金家村288号 华信大厦&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;服务电话：010-88258888 88254114</td>
+      </tr>
+      <tr>
+        <td align="center" class="f12_black line_h21"><a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11030724</a>&nbsp;&nbsp;Copyright 2006-2012&nbsp;<span class="f12b_black">电子工业出版社</span>&nbsp;&nbsp;All rights reserved</td>
+      </tr>
+    </table></td>
+</tr>
+
+    </table></td>
+  </tr>
+</table>
+		</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<div id="picShow" style="display:none;cursor:hand">
+	<div>　　<span id="mySpan"></span></div>
+	<div>
+		<!--<img id="showPic" style="width:500px;height:300px;" src ="aa.jpg" onerror="javascript:this.src='images/NOIMAGE.gif'">-->
+		<img id="showPic" style="width:500px;height:800px;" src ="http://218.249.32.138/covers/9787121255113.jpg" onerror="javascript:this.src='images/NOIMAGE.gif'">
+
+	</div>
+</div>
+
+<map name="Map" id="Map"><area shape="rect" coords="113,32,202,113" href="#" /><area shape="rect" coords="218,31,307,113" href="#" /><area shape="rect" coords="321,30,415,112" href="#" /><area shape="rect" coords="427,31,519,112" href="#" /></map>
+</body>
+</html>
+<script language="javascript">
+ function show(){
+
+
+		document.getElementById("Layer2").style.display="block";
+}
+	function showout(){
+
+
+		document.getElementById("Layer2").style.display="none";
+
+	}
+	function showmoveDiv(){
+	document.getElementById("Layer2").style.display="block";
+	}
+	function showOutDiv(){
+	document.getElementById("Layer2").style.display="none";
+	}
+</script>
+
